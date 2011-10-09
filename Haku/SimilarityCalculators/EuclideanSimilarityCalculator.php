@@ -15,20 +15,20 @@ class EuclideanSimilarityCalculator implements SimilarityCalculatorInterface {
 	 * Get similarity
 	 * 
 	 * @param mixed $preferences Preferences
-	 * @param mixed $person1 Person1
-	 * @param mixed $person2 Person2
+	 * @param mixed $item1 Item1
+	 * @param mixed $item2 Item2
 	 * @return Float
 	 */
-	public function getSimilarity( $preferences, $person1, $person2 ) {
-		$person1Prefs = array_key_exists($person1, $preferences) ? $preferences[$person1] : null;
-		$person2Prefs = array_key_exists($person2, $preferences) ? $preferences[$person2] : null;
+	public function getSimilarity( $preferences, $item1, $item2 ) {
+		$item1Prefs = array_key_exists($item1, $preferences) ? $preferences[$item1] : null;
+		$item2Prefs = array_key_exists($item2, $preferences) ? $preferences[$item2] : null;
 		
 		//If either user has no preferences return nothing
-		if($person1Prefs === null || $person2Prefs === null){
+		if($item1Prefs === null || $item2Prefs === null){
 			return 0;
 		}
 		
-		$commonPrefs = array_intersect_key($person1Prefs, $person2Prefs);
+		$commonPrefs = array_intersect_key($item1Prefs, $item2Prefs);
 		
 		//Nothing in common? Return 0
 		if(count($commonPrefs) == 0){
@@ -36,7 +36,7 @@ class EuclideanSimilarityCalculator implements SimilarityCalculatorInterface {
 		}
 		$sum = 0;
 		foreach($commonPrefs as $key => $val){
-			$sum+= pow($person1Prefs[$key] - $person2Prefs[$key], 2);
+			$sum+= pow($item1Prefs[$key] - $item2Prefs[$key], 2);
 		}
 		
 		//Add 1 to avoid divide by zero errors

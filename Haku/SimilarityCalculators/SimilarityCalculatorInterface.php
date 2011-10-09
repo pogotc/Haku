@@ -13,10 +13,10 @@ interface SimilarityCalculatorInterface {
 	 * Get similarity
 	 * 
 	 * @param mixed $preferences Preferences
-	 * @param mixed $person1 Person1
-	 * @param mixed $person2 Person2
+	 * @param mixed $item1 Item1
+	 * @param mixed $item2 Item2
 	 * @return Float
 	 */
-	public function getSimilarity( $preferences, $person1, $person2 );
+	public function getSimilarity( $preferences, $item1, $item2 );
 }
 ?>
