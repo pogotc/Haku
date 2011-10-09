@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__file__).'/../Haku/autoload.php';
+require_once dirname(__file__).'/../../Haku/autoload.php';
 
 use Haku\SimilarityCalculators\EuclideanSimilarityCalculator;
 
@@ -12,7 +12,7 @@ use Haku\SimilarityCalculators\EuclideanSimilarityCalculator;
 class EuclideanSimilarityCalculatorTest extends PHPUnit_Framework_TestCase {
 	
 	private function getMovieDataVSmall(){
-		return include dirname(__file__).'/../SampleData/movies_vsmall.php';
+		return include dirname(__file__).'/../../SampleData/movies_vsmall.php';
 	}
 	
 	public function testAutoload(){
