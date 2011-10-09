@@ -1,3 +1,4 @@
-h2. Haku
+Haku
+=======================
 
 Collaborative filtering for PHP
